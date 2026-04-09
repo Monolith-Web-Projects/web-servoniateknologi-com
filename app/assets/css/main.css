@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Public Sans', sans-serif;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+
+/* ============================================
+   UNIVERSAL SELECTOR
+   ============================================ */
+
+* {
+  font-family: var(--font-eb-garamond);
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  background-color: ;
+}
+
+/* ============================================
+LINKS
+============================================ */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ============================================
+LISTS
+   ============================================ */
+
+li,
+ul,
+ol {
+  list-style: none;
+  /* Unstyled list (no bullets) */
+}
+
+
+/* ============================================
+TYPOGRAPHY - HEADINGS
+   ============================================ */
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+  /* 40px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+  /* 32px */
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.875rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.75rem;
+  /* 28px */
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+  /* 24px */
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  /* 16px */
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Define the font-face */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('/fonts/Google_Sans/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Apply the font globally  */
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* #815F53 Smokey Rose Brown*/
+/* #69473B Mauve Bark Brown*/
+/* #032A17 Evergreen*/
+/* #1B2D37 Jet black dark blue */
+/* #631B1B Night bordeaux red */
+/* #8B6229 Golden earth yellow */
+/* #2E3131 Graphite grey */
+/* #141414 Onyx Black */
+
