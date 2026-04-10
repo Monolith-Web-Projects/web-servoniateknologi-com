@@ -1,5 +1,5 @@
 <template>
-<div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
+<div class="mx-full flex items-center justify-between py-4 px-4">
                 <h2 class="text-xl font-bold">ServoniaTek</h2>
                 <!-- Navigation -->
                 <nav class="space-x-6">
