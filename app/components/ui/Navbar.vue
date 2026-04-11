@@ -4,10 +4,10 @@
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6">
-            <a href="#" class="text-white hover:text-blue-600 transition-colors">Home</a>
-            <a href="#" class="text-white hover:text-blue-600 transition-colors">Services</a>
-            <a href="#" class="text-white hover:text-blue-600 transition-colors">About</a>
-            <a href="#" class="text-white hover:text-blue-600 transition-colors">Contact</a>
+            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Home</a>
+            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Services</a>
+            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">About</a>
+            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Contact</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -66,4 +66,20 @@ const toggleMenu = () => {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Neon Text */
+.neon-text {
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.neon-text:hover {
+    color: #fff;
+    text-shadow:
+        0 0 5px #04ef7d,
+        0 0 10px #04ef7d,
+        0 0 20px #04ef7d,
+        0 0 40px #04ef7d;
+}
+
 </style>
