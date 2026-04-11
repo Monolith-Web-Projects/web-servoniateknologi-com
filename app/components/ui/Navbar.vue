@@ -1,6 +1,6 @@
 <template>
-    <div class="mx-full flex items-center justify-between py-4 px-4 md:px-8 relative">
-        <h2 class="text-xl font-bold text-white">ServoniaTek</h2>
+    <div class="mx-full flex items-center justify-between py-4 px-4 md:px-8 relative animate-left-to-right">
+        <h2 class="text-xl font-bold text-white ">ServoniaTek</h2>
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6">
@@ -80,6 +80,23 @@ const toggleMenu = () => {
         0 0 10px #04ef7d,
         0 0 20px #04ef7d,
         0 0 40px #04ef7d;
+}
+
+/* Left to right fade */
+@keyframes lefttoRight {
+    from {
+        opacity:0;
+        transform: translateY(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-left-to-right {
+    animation: lefttoRight 1.5s ease-in forwards
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-<section class="py-12 bg-gradient-to-r from-[#1B2D37] via-[#69473B] to-[#1B2D37]" >
+<section class="py-12 bg-gradient-to-r from-[#032A17] via-[#1B2D37] to-[#032A17]" >
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-bold text-white mb-4">Ready to Innovate?</h2>
                 <p class="text-white/90 mb-6 max-w-2xl mx-auto">
