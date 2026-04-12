@@ -14,7 +14,7 @@
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-none">
             <div id="hero-desc" class="text-center">
                 <h1 id="hero-title-h1"
                     class="text-4xl md:text-6xl md:text-center text-left font-bold mb-4 text-white break-words animate-fade-up ">

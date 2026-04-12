@@ -5,7 +5,6 @@
                     <div>
                         <h2 class="text-3xl font-bold mb-4 text-[#032A17] ">
                             <div class="animate-left-to-right">
-
                                 Corporate Tech Innovation
                             </div>
                             <span class=" bg-gradient-to-r text-[#815F53] animate-right-to-left">You Can Trust</span>
@@ -41,17 +40,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="bg-gray-100 p-8 rounded-lg" style="background-color: #032A17">
-                        <div class="text-center text-white">
-                            <div class="text-5xl font-bold mb-2">500+</div>
-                            <div class="text-lg">Projects Completed</div>
-                            <div class="mt-6 pt-6 border-t border-white/20">
-                                <div class="text-3xl font-bold">98%</div>
-                                <div>Client Satisfaction</div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <!-- Counter -->
+                    <UiCounter> </UiCounter>
                 </div>
             </div>
         </section>

@@ -1,13 +1,17 @@
 <template>
-    <div class="mx-full flex items-center justify-between py-4 px-4 md:px-8 relative animate-left-to-right">
-        <h2 class="text-xl font-bold text-white ">ServoniaTek</h2>
+    <iconify-icon icon="mdi:home"></iconify-icon>
+    <div class="mx-full flex items-center justify-between py-4 px-4 md:px-8 relative">
+        <h2 class="text-xl font-bold text-white animate-left-to-right">
+            <a href="/">
+            ServoniaTek</a>
+        </h2>
 
         <!-- Desktop Menu -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Home</a>
+        <nav class="hidden md:flex space-x-6 select-none animate-left-to-right">
+            <a href="/"" class="text-white hover:text-blue-600 transition-colors neon-text">Home</a>
             <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Services</a>
-            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">About</a>
-            <a href="#" class="text-white hover:text-blue-600 transition-colors neon-text">Contact</a>
+            <a href="/about" class="text-white hover:text-blue-600 transition-colors neon-text">About</a>
+            <a href="/contact" class="text-white hover:text-blue-600 transition-colors neon-text">Contact</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -81,6 +85,28 @@ const toggleMenu = () => {
         0 0 20px #04ef7d,
         0 0 40px #04ef7d;
 }
+
+/* Hover state */
+.neon-text:hover {
+    color: #fff;
+    text-shadow:
+        0 0 5px #04ef7d,
+        0 0 10px #04ef7d,
+        0 0 20px #04ef7d,
+        0 0 40px #04ef7d;
+}
+
+/* Active state (when clicked/pressed) */
+.neon-text:active {
+    color: #fff;
+    text-shadow:
+        0 0 5px #04ef7d,
+        0 0 10px #04ef7d,
+        0 0 20px #04ef7d,
+        0 0 40px #04ef7d;
+}
+
+
 
 /* Left to right fade */
 @keyframes lefttoRight {
