@@ -1,6 +1,11 @@
 <template>
     <div class="container text-black">
-        <div ref="GsapSplitChars" class="text gsap-target">
+        <div class="button-wrapper">
+            <button ref="charsBtn" class="button">Characters</button>
+            <button ref="wordsBtn" class="button">Words</button>
+            <button ref="linesBtn" class="button">Lines</button>
+        </div>
+        <div ref="textRef" class="text">
             Break apart HTML text into characters, words, and/or lines for easy animation.
         </div>
     </div>
@@ -11,13 +16,16 @@ import { gsap } from 'gsap'
 import SplitText from 'gsap/src/SplitText'
 import { onMounted, ref } from 'vue'
 
-// Register GSAP plugin if client-side process
+// Register GSAP plugin
 if (process.client) {
   gsap.registerPlugin(SplitText)
 }
 
-// target DOM elements
-const GsapSplitChars = ref(null)
+// Refs for DOM elements
+const charsBtn = ref(null)
+const wordsBtn = ref(null)
+const linesBtn = ref(null)
+const textRef = ref(null)
 
 // State
 let split = null
@@ -31,8 +39,8 @@ const setupSplitText = () => {
   if (animation) {
     animation.revert()
   }
-  if (GsapSplitChars.value) {
-    split = SplitText.create(GsapSplitChars.value, { type: "chars,words,lines" })
+  if (textRef.value) {
+    split = SplitText.create(textRef.value, { type: "chars,words,lines" })
   }
 }
 
@@ -75,29 +83,24 @@ const animateLines = () => {
   })
 }
 
-
-// Setup on Animations 
+// Setup on client-side only
 onMounted(() => {
-    setupSplitText()
-
-    //Observer if element is in view then animate chars
-    const element = document.querySelector('.gsap-target')
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-    console.log('Element is in view');
-    animateChars()
-    // animateWords()
-    // animateLines()
-  }})})
-  observer.observe(element)
-
+  setupSplitText()
+  
+  // Add event listeners
+  charsBtn.value?.addEventListener('click', animateChars)
+  wordsBtn.value?.addEventListener('click', animateWords)
+  linesBtn.value?.addEventListener('click', animateLines)
+  
   // Re-setup on window resize
   window.addEventListener('resize', setupSplitText)
 })
 
 // Cleanup
 onUnmounted(() => {
+  charsBtn.value?.removeEventListener('click', animateChars)
+  wordsBtn.value?.removeEventListener('click', animateWords)
+  linesBtn.value?.removeEventListener('click', animateLines)
   window.removeEventListener('resize', setupSplitText)
   if (split) split.revert()
   if (animation) animation.revert()

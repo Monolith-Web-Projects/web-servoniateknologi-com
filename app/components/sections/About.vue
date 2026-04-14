@@ -7,7 +7,7 @@
                             <div class="animate-left-to-right">
                                 Corporate Tech Innovation
                             </div>
-                            <span class=" bg-gradient-to-r text-[#815F53] animate-right-to-left">You Can Trust</span>
+                            <span ref= "GsapSplitChars" class=" bg-gradient-to-r text-[#815F53] gsap-target">You Can Trust</span>
                         </h2>
                         <p class="text-gray-600 mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -48,6 +48,79 @@
         </section>
 
 </template>
+
+
+<script setup>
+import { gsap } from 'gsap'
+import SplitText from 'gsap/src/SplitText'
+import { onMounted, ref } from 'vue'
+
+// Register GSAP plugin if client-side process
+if (process.client) {
+  gsap.registerPlugin(SplitText)
+}
+
+// target DOM elements
+const GsapSplitChars = ref(null)
+
+// State
+let split = null
+let animation = null
+
+// Setup SplitText
+const setupSplitText = () => {
+  if (split) {
+    split.revert()
+  }
+  if (animation) {
+    animation.revert()
+  }
+  if (GsapSplitChars.value) {
+    split = SplitText.create(GsapSplitChars.value, { type: "chars,words,lines" })
+  }
+}
+
+// Animation functions
+const animateChars = () => {
+  if (animation) animation.revert()
+  if (!split?.chars) return
+  animation = gsap.from(split.chars, {
+    x: 150,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power4",
+    stagger: 0.04
+  })
+}
+
+// Setup on Animations 
+onMounted(() => {
+    setupSplitText()
+
+    //Observer if element is in view then animate chars
+    const element = document.querySelector('.gsap-target')
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    console.log('Element is in view');
+    animateChars()
+    // animateWords()
+    // animateLines()
+  }})})
+  observer.observe(element)
+
+  // Re-setup on window resize
+  window.addEventListener('resize', setupSplitText)
+})
+
+// Cleanup
+onUnmounted(() => {
+  window.removeEventListener('resize', setupSplitText)
+  if (split) split.revert()
+  if (animation) animation.revert()
+})
+</script>
+
 
 <style scoped>
 /* fade right */
