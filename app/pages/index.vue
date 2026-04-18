@@ -13,11 +13,6 @@
 
         <!-- Test Section -->
         <!-- <ui-test></ui-test> -->
-
-        <!-- Footer -->
-        <footer class="py-8" style="background-color: #032A17">
-            <UiFooter></UiFooter>
-        </footer>
     </div>
 </template>
 

@@ -1,11 +1,5 @@
-<script setup>
-    const titleMain = ref("SERVONIATEKNOLOGI")
-    const titleDesc = ref("Innovation You Can Trust.")
-    const desc = ref("Corporate tech solutions delivering innovation and reliability for modern businesses.")
-</script>
-
 <template>
-    <section class="relative pt-24 pb-12 overflow-hidden">
+    <section class="relative overflow-hidden pt-20 pb-14 sm:pt-24 sm:pb-16">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="~/assets/images/Hero_Banner.png" alt="Hero Background" class="w-full h-full object-cover" />
@@ -14,31 +8,42 @@
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 select-none">
-            <div id="hero-desc" class="text-center">
+        <div id="hero-desc" class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 select-none text-center">
                 <h1 id="hero-title-h1"
-                    class="text-4xl md:text-6xl md:text-center text-left font-bold mb-4 text-white break-words animate-fade-up ">
-                    {{titleMain}}
+                    class="mb-3 text-left text-[2rem] leading-[1.05] font-bold text-balance text-white animate-fade-up sm:text-center sm:text-[2.75rem] md:mb-4 md:text-[4.5rem] break-all">
+                    {{ titleMain }}
                 </h1>
-                <h2 id="hero-title-h2" class="text-4xl md:text-6xl md:text-center text-left font-bold mb-4 text-white animate-fade-up animation-delay-200">
-                    {{titleDesc}}
+                <h2
+                    id="hero-title-h2"
+                    class="font-bold mb-4 text-left text-[1.6rem] leading-[1.1]  text-white animate-fade-up animation-delay-200 sm:text-center sm:text-[2.25rem] md:text-[3.5rem]"
+                >
+                    {{ titleDesc }}
                 </h2>
-                <p id="hero-title-p" class="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fade-up animation-delay-400">
-                    {{desc}}
+                <p
+                    id="hero-title-p"
+                    class="mx-0 mb-8 max-w-xl text-left text-base leading-7 text-white/90 animate-fade-up animation-delay-400 sm:mx-auto sm:text-center sm:text-lg md:max-w-2xl md:text-xl"
+                >
+                    {{ desc }}
                 </p>
-                <button class="px-6 py-3 rounded text-white transition transform hover:scale-105 hover:bg-opacity-90"
+                <button class="rounded px-6 py-3 text-white transition transform hover:scale-105 hover:bg-opacity-90"
                     style="background-color: #815F53">
                     Learn More
                 </button>
-            </div>
         </div>
     </section>
 </template>
+
+<script setup>
+    const titleMain = ref("SERVONIATEKNOLOGI")
+    const titleDesc = ref("Innovation You Can Trust")
+    const desc = ref("Corporate tech solutions delivering innovation and reliability for modern businesses.")
+</script>
 
 <style scoped>
     #hero-title-h1 {
         font-family: 'GoogleSans', 'Roboto', sans-serif;
         font-weight: 900;
+        text-wrap: balance;
     }
 
     #hero-title-h2 {

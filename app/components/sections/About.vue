@@ -49,7 +49,6 @@
 
 </template>
 
-
 <script setup>
 import { gsap } from 'gsap'
 import SplitText from 'gsap/src/SplitText'
@@ -96,21 +95,40 @@ const animateChars = () => {
 // Setup on Animations 
 onMounted(() => {
     setupSplitText()
-
     //Observer if element is in view then animate chars
     const element = document.querySelector('.gsap-target')
-    const observer = new IntersectionObserver((entries) => {
+    const observeTitle = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
     if (entry.isIntersecting) {
-    console.log('Element is in view');
+    // console.log('Element is in view');
     animateChars()
     // animateWords()
     // animateLines()
   }})})
-  observer.observe(element)
-
+  observeTitle.observe(element)
   // Re-setup on window resize
   window.addEventListener('resize', setupSplitText)
+
+
+  // Target multiple elements with CSS animations
+  const elements = document.querySelectorAll('.animate-fade-right, .animate-fade-up, .animate-scale')
+  
+  const observeList = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log('Element is in view bro');
+        // Add a class to trigger animation
+        entry.target.classList.add('animate-in')
+        // Stop observing after animation starts
+        observeList.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.3 }) // Trigger when 30% visible
+
+  // Observe each element
+  elements.forEach(element => {
+    observeList.observe(element)
+  })
 })
 
 // Cleanup
@@ -135,56 +153,22 @@ onUnmounted(() => {
     }
 }
 
-.animate-fade-right {
+.animate-fade-right.animate-in {
     animation: fadeRight 0.8s ease-out forwards;
 }
 
-.animation-delay-200 {
+.animation-delay-200.animate-in {
     animation-delay: 0.2s;
     opacity: 0; /* Start hidden */
 }
 
-.animation-delay-400 {
+.animation-delay-400.animate-in {
     animation-delay: 0.4s;
     opacity: 0;
 }
 
-.animation-delay-600 {
+.animation-delay-600.animate-in {
     animation-delay: 0.6s;
     opacity: 0;
 }
-
-@keyframes lefttoRight {
-    from {
-        opacity:0;
-        transform: translateX(-100px)
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-left-to-right {
-    animation: lefttoRight 0.5s ease-in forwards
-}
-
-
-@keyframes RighttoLeft {
-    from {
-        opacity:0;
-        transform: translateX(100px)
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-right-to-left {
-    animation: RighttoLeft 0.5s ease-in forwards
-}
-
 </style>
